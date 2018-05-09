@@ -1,0 +1,12 @@
+Number of training images: 17790
+Number of test images: 7160
+
+Stats for shallow network:
+Average sum of squared error = 438.29421254940127
+Average sum of squared error (pixel level error) = 0.03424173535542188
+
+Stats for deep network:
+Average sum of squared error = 553.0780567915136
+Average sum of squared error (pixel level error) = 0.04320922318683714
+
+It seems that shallow network performs better than the deep network architecture in terms of average sum of squared error; however, in terms of the actual output of the test images, their performance are quite comparable. There are cases when deeper network produces much better result than the shallow one, and vice versa. The deeper model usually tends to work better when the lanes in test image is hard to detect, and sometimes produces blury prediction on easy tests cases. The possible reasons for this can be: (1) deeper network is underfitting and requires more training data (only 181,687 trainable parameters in the shallow model and 439,991 trainable parameters in the deep network). (2) Average sum of squared error might not be a good measure for evaluating the performance of the two different CNN architecture.
